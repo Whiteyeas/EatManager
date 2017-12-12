@@ -4,3 +4,10 @@ bin/
 .settings/
 target/
 .vscode/settings.json
+.idea
+target
+
+*.iml
+
+.DS_Store
+
