@@ -9,7 +9,6 @@ public class DashboardView extends View {
         DefaultButtonModel model = new DefaultButtonModel();
         Box verticalBox = Box.createVerticalBox();
         verticalBox.add(Box.createVerticalGlue());
-        verticalBox.add(new JButton("Add employee"));
         verticalBox.add(Box.createVerticalGlue());
         verticalBox.add(new JButton("Display employees"));
         verticalBox.add(Box.createVerticalGlue());

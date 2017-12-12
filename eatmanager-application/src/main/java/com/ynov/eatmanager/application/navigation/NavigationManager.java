@@ -54,7 +54,11 @@ public class NavigationManager {
 
     public boolean goBack() {
         // Return false if the stack is empty
-        if (_stack.size() < 1) {
+        System.out.println("go back");
+
+        System.out.println(_stack.size());
+
+        if (_stack.size() < 2) {
             return false;
         }
 
@@ -63,6 +67,7 @@ public class NavigationManager {
         View lastView = _stack.get(index);
 
         if (lastView != null) {
+            _stack.remove(index);
             setView(lastView);
             return true;
         } else {
