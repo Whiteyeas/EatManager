@@ -13,38 +13,40 @@
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
-<<<<<<< HEAD
-=======
     <properties>
         <flyway.version>5.0.2</flyway.version>
         <mysql.version>8.0.8-dmr</mysql.version>
+        <junit.version>4.12</junit.version>
+        <jdbi.version>3.0.0-beta2</jdbi.version>
     </properties>
 
     <dependencies>
-        <!-- Depense Flway -->
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>${flyway.version}</version>
         </dependency>
 
-        <!-- Depense MySql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
 
-        <!-- Test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3</artifactId>
+            <version>${jdbi.version}</version>
         </dependency>
     </dependencies>
 
->>>>>>> services
     <build>
         <plugins>
             <plugin>
@@ -57,9 +59,4 @@
             </plugin>
         </plugins>
     </build>
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> services
 </project>
