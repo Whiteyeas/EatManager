@@ -15,6 +15,7 @@
 
     <properties>
         <junit.version>4.12</junit.version>
+        <jdbi.version>3.0.0-beta2</jdbi.version>
     </properties>
 
     <dependencies>
@@ -29,6 +30,11 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3</artifactId>
+            <version>${jdbi.version}</version>
         </dependency>
     </dependencies>
 

@@ -3,6 +3,7 @@ package com.ynov.eatmanager.application;
 
 import com.ynov.eatmanager.application.navigation.NavigationManager;
 import com.ynov.eatmanager.application.views.DashboardView;
+import com.ynov.eatmanager.application.views.LoginView;
 
 import javax.swing.*;
 
@@ -16,7 +17,7 @@ public class Application {
     private static void run() {
         JFrame frame = new JFrame();
         NavigationManager.Initialize(frame);
-        NavigationManager.getInstance().navigateTo(new DashboardView());
+        NavigationManager.getInstance().navigateTo(new LoginView());
 
         frame.setVisible(true);
         frame.setSize(800, 800);

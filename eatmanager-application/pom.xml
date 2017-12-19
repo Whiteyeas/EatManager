@@ -13,6 +13,35 @@
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <jdbi.version>3.0.0-beta2</jdbi.version>
+    </properties>
+
+    <dependencies>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ynov.java</groupId>
+            <artifactId>eat-manager-service</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ynov.java</groupId>
+            <artifactId>eat-manager-server</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3</artifactId>
+            <version>${jdbi.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -25,15 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <!-- Test dependencies -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
 </project>
