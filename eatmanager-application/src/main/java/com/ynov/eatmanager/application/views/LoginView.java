@@ -1,5 +1,6 @@
 package com.ynov.eatmanager.application.views;
 
+import com.ynov.eatmanager.application.navigation.NavigationManager;
 import com.ynov.eatmanager.server.queries.UserQueries;
 import com.ynov.eatmanager.service.DatabaseConnexion;
 import org.jdbi.v3.core.Jdbi;
@@ -100,9 +101,13 @@ public class LoginView extends View {
             UserQueries queries = new UserQueries();
             int rank = queries.connexion(_usernameText.getText(), _passwordText.getText());
 
-            JOptionPane.showMessageDialog(null, rank);
+            if (rank > 0) {
+                NavigationManager.getInstance().navigateTo(new DashboardView());
+            } else {
+                JOptionPane.showMessageDialog(null, "Identifiants incorrects !");
+            }
         } catch (Exception ex) {
-
+            JOptionPane.showMessageDialog(null, "Une erreur est survenue...");
         }
     }
 }
