@@ -15,7 +15,7 @@ public class UserQueries extends Queries
         String query = String.format(queriesProperties.getProperty("user.connexion"), email, password);
         System.out.println(query);
 
-        try (Handle h = databaseConnexion.getConnexion().open())
+        try (Handle h = databaseConnexion.get().open())
         {
             return h.createQuery(query).mapTo(int.class).findOnly();
         }

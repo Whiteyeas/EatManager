@@ -46,9 +46,9 @@ public class DatabaseConnexion extends LoadInfoDatabase
     }
 
     //Retourne l'instance de la connexion
-    public static Jdbi get(String ipDatabase)
+    public static Jdbi get()
     {
-        setIP(ipDatabase);
+        //setIP(ipDatabase);
         return getInstance().getConnexion();
     }
 }

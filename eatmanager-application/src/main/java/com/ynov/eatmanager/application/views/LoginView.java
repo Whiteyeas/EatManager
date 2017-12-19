@@ -93,7 +93,8 @@ public class LoginView extends View {
     }
 
     private void connect() {
-        try {
+        try
+        {
             DatabaseConnexion.setIP(_addressText.getText());
             Jdbi database = DatabaseConnexion.get();
             UserQueries queries = new UserQueries();

@@ -18,7 +18,7 @@ abstract class Queries
     protected void executeQuery (String query)
     {
         System.out.println(query);
-        try (Handle h = databaseConnexion.get("10.31.1.248").open())
+        try (Handle h = databaseConnexion.get().open())
         {
             System.out.println("Execution de la requete");
             h.execute(query);
