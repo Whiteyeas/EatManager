@@ -1,9 +1,11 @@
+import com.ynov.eatmanager.service.DatabaseConception;
+import com.ynov.eatmanager.service.DatabaseConnexion;
 import org.jdbi.v3.core.Jdbi;
 import org.junit.Test;
 
 public class TestServicesDatabase
 {
-    private static String IPServer = "192.168.1.50";
+    private static String IPServer = "192.168.6.15";
 
     @Test
     //Test de la migration avec Flyway
@@ -33,6 +35,18 @@ public class TestServicesDatabase
             System.out.println(DatabaseConnexion.getInstance().getUrl());
             System.out.println("Compteur : " + cpt);
         }
+    }
+
+    @Test
+    //Test de la connexion avec jdbi
+    public void testConnection () {
+        DatabaseConnexion.setIP(IPServer);
+        try {
+            DatabaseConnexion.getInstance().getConnexion().open();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
