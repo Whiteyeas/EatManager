@@ -33,19 +33,19 @@ public class RestaurantQueries extends Queries {
     //Cre un restaurant
     public void createRestaurant (String labelRestaurant, String address, String phoneNumber, int idManager) {
         String querie = String.format(queriesProperties.getProperty("restaurant.create"), labelRestaurant, address, phoneNumber, idManager);
-        executeQuerie(querie);
+        executeQuery(querie);
     }
 
     //Modifie un restraurant
     public void updateRestaurant (String labelRestaurant, String address, String phoneNumber, int idManager, int idRestaurant) {
         String querie = String.format(queriesProperties.getProperty("restaurant.update"), labelRestaurant, address, phoneNumber, idManager, idRestaurant);
-        executeQuerie(querie);
+        executeQuery(querie);
     }
 
     //Supprimer un restaurant
     public void deleteRestaurant (int idRestaurant) {
         String querie = String.format(queriesProperties.getProperty("restaurant.delete"), idRestaurant);
-        executeQuerie(querie);
+        executeQuery(querie);
     }
 
     public RestaurantQueries () {

@@ -33,19 +33,19 @@ public class ProductQueries extends Queries {
     //Cre un produit
     public void createProduct (String labelProduct, int quantity, int unityPrice) {
         String querie = String.format(queriesProperties.getProperty("product.create"), labelProduct, quantity, unityPrice);
-        executeQuerie(querie);
+        executeQuery(querie);
     }
 
     //Modifie un produit
     public void updateProduct (int quantity, int unityPrice, int idProduct) {
         String querie = String.format(queriesProperties.getProperty("product.update"), quantity, unityPrice, idProduct);
-        executeQuerie(querie);
+        executeQuery(querie);
     }
 
     //Retire du stock les produits commandes
     public void commandProduct (int quantity, int idProduct) {
         String querie = String.format(queriesProperties.getProperty("product.command"), quantity, idProduct);
-        executeQuerie(querie);
+        executeQuery(querie);
     }
 
     public ProductQueries() {

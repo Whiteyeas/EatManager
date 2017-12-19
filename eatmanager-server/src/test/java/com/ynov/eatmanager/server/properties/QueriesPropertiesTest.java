@@ -7,7 +7,8 @@ import static org.junit.Assert.*;
 public class QueriesPropertiesTest {
 
     @Test
-    public void testProperties () {
+    public void testProperties ()
+    {
         QueriesProperties queriesProperties = new QueriesProperties();
     }
 }

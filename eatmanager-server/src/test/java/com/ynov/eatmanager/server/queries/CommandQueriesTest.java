@@ -5,11 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CommandQueriesTest {
-
+public class CommandQueriesTest
+{
     @Test
     public void testAllQueries () {
-        DatabaseConnexion.setIP("192.168.6.15");
+        DatabaseConnexion.setIP("10.31.1.248");
         CommandQueries commandQueries = new CommandQueries();
         commandQueries.createCommand(1,1,1);
         commandQueries.selectCommand();
