@@ -34,14 +34,14 @@ public class LoadInfoDatabase
     private String getDatabaseName()
     {
         loadInput();
-        System.out.println(prop.getProperty("database.name"));
+        //System.out.println(prop.getProperty("database.name"));
         return prop.getProperty("database.name");
     }
 
     //Constitution de l'URL du serveur
     public String getUrl()
     {
-        System.out.println("jdbc:mysql://" + ipServer + "/" + getDatabaseName());
+        //System.out.println("jdbc:mysql://" + ipServer + "/" + getDatabaseName());
         return String.format("jdbc:mysql://%s/%s?useSSL=false", ipServer, getDatabaseName());
     }
 
@@ -49,7 +49,7 @@ public class LoadInfoDatabase
     protected String getUser()
     {
         loadInput();
-        System.out.println(prop.getProperty("database.username"));
+        //System.out.println(prop.getProperty("database.username"));
         return prop.getProperty("database.username");
     }
 
@@ -57,7 +57,7 @@ public class LoadInfoDatabase
     protected String getPassword()
     {
         loadInput();
-        System.out.println(prop.getProperty("database.password"));
+        //System.out.println(prop.getProperty("database.password"));
         return prop.getProperty("database.password");
     }
 }

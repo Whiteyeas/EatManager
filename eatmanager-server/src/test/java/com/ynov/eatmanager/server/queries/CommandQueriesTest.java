@@ -9,7 +9,7 @@ public class CommandQueriesTest
 {
     @Test
     public void testAllQueries () {
-        DatabaseConnexion.setIP("10.31.1.248");
+        //DatabaseConnexion.setIP("10.31.1.248");
         CommandQueries commandQueries = new CommandQueries();
         commandQueries.createCommand(1,1,1);
         commandQueries.selectCommand();

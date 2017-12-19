@@ -28,7 +28,7 @@ public class TestServicesDatabase
         for (int cpt=0; cpt<10; cpt++) {
             try {
                 DatabaseConnexion.setIP(IPServer);
-                Jdbi connexion = DatabaseConnexion.getInstance().getConnexion();
+                Jdbi connexion = DatabaseConnexion.get("10.31.1.248");
             } catch (Exception e) {
                 e.printStackTrace();
             }

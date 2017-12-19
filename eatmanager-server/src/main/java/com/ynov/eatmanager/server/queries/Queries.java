@@ -11,18 +11,21 @@ abstract class Queries
 
     protected Queries()
     {
-        databaseConnexion = DatabaseConnexion.getInstance();
         this.queriesProperties = new QueriesProperties();
     }
 
     //Execute la requete passe en parametre
-    protected void executeQuery (String querie)
+    protected void executeQuery (String query)
     {
-        System.out.println(querie);
-        try (Handle h = databaseConnexion.getInstance().getConnexion().open()) {
-            h.execute(querie);
+        System.out.println(query);
+        try (Handle h = databaseConnexion.get("10.31.1.248").open())
+        {
+            System.out.println("Execution de la requete");
+            h.execute(query);
+            System.out.println("Fin de l'execution de la requete");
         }
-        catch (Exception e) {
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
