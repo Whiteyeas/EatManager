@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class TestServicesDatabase
 {
-    private static String IPServer = "192.168.6.15";
+    private static String IPServer = "10.31.1.248";
 
     @Test
     //Test de la migration avec Flyway

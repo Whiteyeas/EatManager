@@ -2,6 +2,7 @@
 CREATE TABLE t_ranks (
     id_rank INT(4) NOT NULL AUTO_INCREMENT,
     label_rank VARCHAR(15) NOT NULL,
+    comment VARCHAR(250),
         CONSTRAINT pk_id_rank PRIMARY KEY(id_rank)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
@@ -34,7 +35,7 @@ CREATE TABLE t_products (
     id_product INT(4) NOT NULL AUTO_INCREMENT,
     label_product VARCHAR(30) NOT NULL,
     quantity_in_stock INT(10) NOT NULL,
-    unity_price INT(4) NOT NULL,
+    unity_price FLOAT(4) NOT NULL,
         CONSTRAINT pk_id_product PRIMARY KEY(id_product)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
@@ -47,6 +48,6 @@ CREATE TABLE t_orders (
     quantity INT(4) NOT NULL,
     unity_price INT(4) NOT NULL,
         CONSTRAINT pk_id_order PRIMARY KEY(id_order),
-        CONSTRAINT fk_id_restaurant FOREIGN KEY(id_restaurant) REFERENCES t_restaurants(id_restaurant)
+        CONSTRAINT fk_id_restaurant FOREIGN KEY(id_restaurant) REFERENCES t_restaurants(id_restaurant),
         CONSTRAINT fk_id_product FOREIGN KEY(id_product) REFERENCES t_products(id_product)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;

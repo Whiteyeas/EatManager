@@ -8,7 +8,8 @@ import java.util.List;
 public class RestaurantQueries extends Queries {
 
     //Retourne tous les restaurants
-    public List<Restaurant> selectRestaurant () {
+    public List<Restaurant> selectRestaurant ()
+    {
         try (Handle h = databaseConnexion.getConnexion().open()) {
             return h.createQuery(queriesProperties.getProperty("restaurant.select")).mapToBean(Restaurant.class).list();
         }
@@ -19,10 +20,12 @@ public class RestaurantQueries extends Queries {
     }
 
     //Retourne un restaurant choisi
-    public Restaurant seletOneRestaurant (int id) {
-        String querie = String.format(queriesProperties.getProperty("restaurant.selectOwn"), id);
-        try (Handle h = databaseConnexion.getConnexion().open()) {
-            return h.createQuery(querie).mapToBean(Restaurant.class).findOnly();
+    public Restaurant selectOneRestaurant (int id)
+    {
+        String query = String.format(queriesProperties.getProperty("restaurant.selectOwn"), id);
+        try (Handle h = databaseConnexion.getConnexion().open())
+        {
+            return h.createQuery(query).mapToBean(Restaurant.class).findOnly();
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -31,21 +34,22 @@ public class RestaurantQueries extends Queries {
     }
 
     //Cre un restaurant
-    public void createRestaurant (String labelRestaurant, String address, String phoneNumber, int idManager) {
-        String querie = String.format(queriesProperties.getProperty("restaurant.create"), labelRestaurant, address, phoneNumber, idManager);
-        executeQuery(querie);
+    public void createRestaurant (String labelRestaurant, String address, String phoneNumber, int idManager)
+    {
+        String query = String.format(queriesProperties.getProperty("restaurant.create"), labelRestaurant, address, phoneNumber, idManager);
+        executeQuery(query);
     }
 
-    //Modifie un restraurant
+    //Modifie un restaurant
     public void updateRestaurant (String labelRestaurant, String address, String phoneNumber, int idManager, int idRestaurant) {
-        String querie = String.format(queriesProperties.getProperty("restaurant.update"), labelRestaurant, address, phoneNumber, idManager, idRestaurant);
-        executeQuery(querie);
+        String query = String.format(queriesProperties.getProperty("restaurant.update"), labelRestaurant, address, phoneNumber, idManager, idRestaurant);
+        executeQuery(query);
     }
 
     //Supprimer un restaurant
     public void deleteRestaurant (int idRestaurant) {
-        String querie = String.format(queriesProperties.getProperty("restaurant.delete"), idRestaurant);
-        executeQuery(querie);
+        String query = String.format(queriesProperties.getProperty("restaurant.delete"), idRestaurant);
+        executeQuery(query);
     }
 
     public RestaurantQueries () {

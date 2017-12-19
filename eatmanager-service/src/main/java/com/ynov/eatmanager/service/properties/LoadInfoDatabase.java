@@ -42,7 +42,7 @@ public class LoadInfoDatabase
     public String getUrl()
     {
         System.out.println("jdbc:mysql://" + ipServer + "/" + getDatabaseName());
-        return "jdbc:mysql://" + ipServer + "/" + getDatabaseName();
+        return String.format("jdbc:mysql://%s/%s?useSSL=false", ipServer, getDatabaseName());
     }
 
     //Récupération du username
@@ -51,7 +51,6 @@ public class LoadInfoDatabase
         loadInput();
         System.out.println(prop.getProperty("database.username"));
         return prop.getProperty("database.username");
-
     }
 
     //Récupération du password

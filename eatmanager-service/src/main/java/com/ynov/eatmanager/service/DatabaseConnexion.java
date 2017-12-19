@@ -44,4 +44,10 @@ public class DatabaseConnexion extends LoadInfoDatabase
     {
         return this.connexionDB;
     }
+
+    //Retourne l'instance de la connexion
+    public static Jdbi get()
+    {
+        return getInstance().getConnexion();
+    }
 }

@@ -33,15 +33,16 @@ public class CommandQueries extends Queries{
     }
 
     //Cre une commande
-    public void createCommand (int idRestaurant, int idProduct, int quantity) {
-        String querie = String.format(queriesProperties.getProperty("command.create"), idRestaurant, idProduct, quantity);
-        executeQuery(querie);
+    public void createCommand (int idRestaurant, int idProduct, int quantity)
+    {
+        String query = String.format(queriesProperties.getProperty("command.create"), idRestaurant, idProduct, quantity);
+        executeQuery(query);
     }
 
     //Annule une commande
     public void cancelCommand (int idCommand) {
-        String querie = String.format(queriesProperties.getProperty("command.cancelCommand"), idCommand);
-        executeQuery(querie);
+        String query = String.format(queriesProperties.getProperty("command.cancelCommand"), idCommand);
+        executeQuery(query);
     }
 
     public CommandQueries() {
