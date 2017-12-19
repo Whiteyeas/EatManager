@@ -1,3 +1,5 @@
+package com.ynov.eatmanager.service.properties;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -9,9 +11,9 @@ public class LoadInfoDatabase
     private static Properties prop = new Properties();
     private static InputStream input = null;
 
-    LoadInfoDatabase(String IpServer)
+    protected LoadInfoDatabase(String IpServer)
     {
-       ipServer = IpServer;
+        ipServer = IpServer;
     }
 
     //Chargement du fichier contenant les informations de connexion
@@ -19,7 +21,7 @@ public class LoadInfoDatabase
     {
         try
         {
-            input = getClass().getResourceAsStream("db/login/db.properties");
+            input = getClass().getResourceAsStream("/db/login/db.properties");
             prop.load(input);
         }
         catch (IOException e)
@@ -37,7 +39,7 @@ public class LoadInfoDatabase
     }
 
     //Constitution de l'URL du serveur
-    protected String getUrl()
+    public String getUrl()
     {
         System.out.println("jdbc:mysql://" + ipServer + "/" + getDatabaseName());
         return "jdbc:mysql://" + ipServer + "/" + getDatabaseName();
@@ -60,3 +62,4 @@ public class LoadInfoDatabase
         return prop.getProperty("database.password");
     }
 }
+

@@ -1,3 +1,6 @@
+package com.ynov.eatmanager.service;
+
+import com.ynov.eatmanager.service.properties.LoadInfoDatabase;
 import org.flywaydb.core.Flyway;
 
 public class DatabaseConception extends LoadInfoDatabase

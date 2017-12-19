@@ -1,3 +1,6 @@
+package com.ynov.eatmanager.service;
+
+import com.ynov.eatmanager.service.properties.LoadInfoDatabase;
 import org.jdbi.v3.core.Jdbi;
 
 public class DatabaseConnexion extends LoadInfoDatabase
