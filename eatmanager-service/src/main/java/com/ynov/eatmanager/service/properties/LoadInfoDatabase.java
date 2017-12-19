@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class LoadInfoDatabase
 {
-    protected static String ipServer;
+    private static String ipServer;
     private static Properties prop = new Properties();
     private static InputStream input = null;
 
