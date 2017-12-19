@@ -28,7 +28,7 @@ public class UserQueries extends Queries
     //Retourne les users présents dans la table t_users
     public List<User> selectUser ()
     {
-        try (Handle h = databaseConnexion.getConnexion().open())
+        try (Handle h = databaseConnexion.get().open())
         {
            return h.createQuery(queriesProperties.getProperty("user.select")).mapToBean(User.class).list();
         }
@@ -43,7 +43,8 @@ public class UserQueries extends Queries
     {
         String query = String.format(queriesProperties.getProperty("user.selectOne"), id);
         System.out.println(query);
-        try (Handle h = databaseConnexion.getConnexion().open()) {
+        try (Handle h = databaseConnexion.get().open())
+        {
             return h.createQuery(query).mapToBean(User.class).findOnly();
         }
         catch (Exception e) {
