@@ -9,12 +9,12 @@ public class RestaurantQueriesTest {
 
     @Test
     public void testAllQueries () {
-        DatabaseConnexion.setIP("192.168.6.15");
+        //DatabaseConnexion.setIP("192.168.6.15");
         RestaurantQueries restaurantQueries = new RestaurantQueries();
-        restaurantQueries.createRestaurant("labelRestaurant", "address", "0612345678", 1);
-        restaurantQueries.selectOneRestaurant(1);
-        restaurantQueries.updateRestaurant("labelRestaurant2", "address2", "658965", 2, 1);
-        restaurantQueries.selectRestaurant();
-        restaurantQueries.deleteRestaurant(1);
+        restaurantQueries.createRestaurant("RestaurantTest", "address", "0612345678", 1);
+        //restaurantQueries.selectOneRestaurant(1);
+        //restaurantQueries.updateRestaurant("RestaurantTest2", "address2", "658965", 2, 1);
+        //restaurantQueries.selectRestaurant();
+        //restaurantQueries.deleteRestaurant(1);
     }
 }

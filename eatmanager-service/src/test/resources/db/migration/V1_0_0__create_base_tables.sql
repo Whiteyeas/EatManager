@@ -46,7 +46,7 @@ CREATE TABLE t_orders (
     id_restaurant INT(4) NOT NULL,
     id_product INT(4) NOT NULL,
     quantity INT(4) NOT NULL,
-    unity_price INT(4) NOT NULL,
+    unity_price FLOAT(4) NOT NULL,
         CONSTRAINT pk_id_order PRIMARY KEY(id_order),
         CONSTRAINT fk_id_restaurant FOREIGN KEY(id_restaurant) REFERENCES t_restaurants(id_restaurant),
         CONSTRAINT fk_id_product FOREIGN KEY(id_product) REFERENCES t_products(id_product)
